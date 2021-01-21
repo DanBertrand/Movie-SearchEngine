@@ -9,6 +9,10 @@ body {
 	margin-bottom: 2%;
 }
 
+#inputbar{
+	box-shadow: 1px 1px black;
+}
+
 .card{
 	margin-right: 40%;
 	margin-left: 20%;
