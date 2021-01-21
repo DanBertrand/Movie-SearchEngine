@@ -69,6 +69,46 @@ search = () => {
                 }
                 mySearch.movies = movieArray
                 mySearch.display()
+
+
+                // To setup the Lazy scrolling later, couldnt finish
+
+                // let observerConfig = {
+                //     root: document.getElementById("display"),
+                //     rootMargin: '0px',
+                //     threshold: 1.0
+                // };
+
+
+                // function observerFn(entries, observer) {
+                //     console.log(...entries);
+                // }
+
+                // let observer = new IntersectionObserver(observerFn, observerConfig);
+
+                // let cards = document.querySelectorAll(".card")
+
+                // console.log(cards.length)
+
+
+                // function callback(entries) {
+                //     console.log(entries);
+
+                //         if (entries[i].isIntersecting) {
+                //             console.log(document.getElementById(`movie${i}`))
+                //             console.log(entries.isIntersecting); // entries will 
+                //         }
+                // }
+
+                // let observer2 = new IntersectionObserver(callback);
+
+                // cards.forEach(card => {
+                // 	let = 0;
+                //     observer2.observe(card, i);
+                // 	i =+ 1;
+                // });
+
+
                 return mySearch
             }
         });
@@ -135,4 +175,4 @@ window.onclick = function(event) {
     if (event.target) {
         myModal.style.display = "none";
     }
-}
+};

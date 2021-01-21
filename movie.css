@@ -1,78 +1,102 @@
 body {
-	background-color: grey;
+    background-color: grey;
 }
 
 .searchbar {
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 10%;
-	margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+    position: fixed;
+    width: 1000px;
+    z-index: 1;
 }
 
-#inputbar{
-	box-shadow: 1px 1px black;
+#inputbar {
+    box-shadow: 1px 1px black;
 }
 
-.card{
-	margin-right: 40%;
-	margin-left: 20%;
-	background-color: black;
-	color: white;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	height: 22em;
-	width: 42em;
+.card {
+    margin-right: 40%;
+    margin-left: 20%;
+    background-color: black;
+    color: white;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 22em;
+    width: 42em;
 }
 
-.card:hover{
-	position: relative;
-	left: 6em;
-	width: 50%;
-	height: 50%;
-	margin-top: 6em;
-	margin-bottom: 6em;
+.card.visible {
+    display: none;
 }
 
-.image{
-	height: 100%;
-	width: 100%;
-	padding-top: 10px;
+
+.card:hover {
+    position: relative;
+    left: 6em;
+    width: 50%;
+    height: 50%;
+    margin-top: 8em;
+    margin-bottom: 8em;
 }
 
-.right-card{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding-bottom: 40px;
-	padding-top: 40px;
+.image {
+    height: 100%;
+    width: 100%;
+    padding-top: 10px;
 }
 
-#result{
-	font-weight: bold;
-	margin-left: 20%;
+.right-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+#result {
+    font-weight: bold;
+    margin-left: 20%;
+    position: relative;
+    top: 200px;
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 150px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 .modal-content {
-  background-color: black;
-  color:white;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  border-color: black;
+    background-color: black;
+    color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-color: black;
 }
 
+
+#display {
+    position: relative;
+    top: 200px;
+}
