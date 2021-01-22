@@ -22,27 +22,26 @@ class Search {
 
         for (i = 0; i < array.length; i++) {
             section.innerHTML += `
-						<div class="card">
-							<div class="row">
-						    	<div class="col-4" id="image-container">
-						        	<img src=${array[i].poster} class="image" alt="picture comming soon">
-						        </div>
-						        <div class="col-8 right-card">
-						        	<div>
-						            	<h2>${array[i].title}</h2>
-						            	<h3>${array[i].year}</h3>
-						            </div>
-						            <div>
-						                <button id="movie${i}" type="button" class="btn btn-outline-secondary">Read More</button>
-						            </div>
-						        </div>
-						    </div>
-						</div>
-					`
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-4" id="image-container">
+                                    <img src=${array[i].poster} class="image" alt="picture comming soon">
+                                </div>
+                                <div class="col-8 right-card">
+                                    <div>
+                                        <h2>${array[i].title}</h2>
+                                        <h3>${array[i].year}</h3>
+                                    </div>
+                                    <div>
+                                        <button id="movie${i}" type="button" class="btn btn-outline-secondary">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
         };
     }
 };
-
 
 search = () => {
     const input = document.getElementById("inputbar").value;
@@ -70,45 +69,28 @@ search = () => {
                 mySearch.movies = movieArray
                 mySearch.display()
 
+                let observer = new IntersectionObserver(function(entries) {
 
-                // To setup the Lazy scrolling later, couldnt finish
+                    entries.forEach(function(entry) {
 
-                // let observerConfig = {
-                //     root: document.getElementById("display"),
-                //     rootMargin: '0px',
-                //     threshold: 1.0
-                // };
+                        if (entry.intersectionRatio > 0.4) {
+                            entry.target.classList.remove('invisible')
+                        } else {
+                            entry.target.classList.add('invisible')
+                        }
+                    })
 
-
-                // function observerFn(entries, observer) {
-                //     console.log(...entries);
-                // }
-
-                // let observer = new IntersectionObserver(observerFn, observerConfig);
-
-                // let cards = document.querySelectorAll(".card")
-
-                // console.log(cards.length)
+                }, {
+                    threshold: [0.4]
+                })
 
 
-                // function callback(entries) {
-                //     console.log(entries);
+                let cards = document.querySelectorAll(`.card`)
 
-                //         if (entries[i].isIntersecting) {
-                //             console.log(document.getElementById(`movie${i}`))
-                //             console.log(entries.isIntersecting); // entries will 
-                //         }
-                // }
-
-                // let observer2 = new IntersectionObserver(callback);
-
-                // cards.forEach(card => {
-                // 	let = 0;
-                //     observer2.observe(card, i);
-                // 	i =+ 1;
-                // });
-
-
+                cards.forEach(function(card) {
+                    card.classList.add('invisible')
+                    observer.observe(card)
+                })
                 return mySearch
             }
         });
@@ -132,26 +114,26 @@ popUp = (e) => {
                 let closeButton = document.getElementById("close");
 
                 popUpContent.innerHTML = `
-						<div>
-							<div class="row">
-						    	<div class="col-4">
-						        	<img src=${movie.poster} class="image" alt="picture comming soon">
-						        </div>
-						        <div class="col-8 pop-up-right-card">
-						        	<div>
-						                <h2>${movie.title}</h2>
-						                <p>Director: ${item.Director}</p>
-						                <p>${item.Released}</p>
-						                <p>Duration: ${item.Runtime}</p>
-						                <p>Actors: ${item.Actors}</p>
-						        	</div>
-						            <div>
-						            	<p>Plot: ${item.Plot}</p>
-						            </div>
-						        </div>
-						    </div>
-						</div>
-					`
+                        <div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src=${movie.poster} class="image" alt="picture comming soon">
+                                </div>
+                                <div class="col-8 pop-up-right-card">
+                                    <div>
+                                        <h2>${movie.title}</h2>
+                                        <p>Director: ${item.Director}</p>
+                                        <p>${item.Released}</p>
+                                        <p>Duration: ${item.Runtime}</p>
+                                        <p>Actors: ${item.Actors}</p>
+                                    </div>
+                                    <div>
+                                        <p>Plot: ${item.Plot}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
                 myModal.style.display = "block";
             });
     }

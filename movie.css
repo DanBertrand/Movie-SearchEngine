@@ -1,11 +1,23 @@
+
+
 body {
     background-color: grey;
+}
+
+#top-page {
+    color: grey;
+    position: fixed;
+    background-color: grey;
+    height: 120px;
+    width: 100%;
+    top: -1px;
+    z-index: 1;
 }
 
 .searchbar {
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 10%;
+    margin-top: 1%;
     margin-bottom: 2%;
     position: fixed;
     width: 1000px;
@@ -25,20 +37,15 @@ body {
     margin-bottom: 8px;
     height: 22em;
     width: 42em;
+
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 1s, opacity 1s;
 }
 
-.card.visible {
-    display: none;
-}
-
-
-.card:hover {
-    position: relative;
-    left: 6em;
-    width: 50%;
-    height: 50%;
-    margin-top: 8em;
-    margin-bottom: 8em;
+.card.invisible {
+    transform: translateX(-600px);
+    opacity: 0;
 }
 
 .image {
@@ -56,10 +63,12 @@ body {
 }
 
 #result {
+    color: black;
     font-weight: bold;
     margin-left: 20%;
-    position: relative;
-    top: 200px;
+    position: fixed;
+    top:90px;
+
 }
 
 .modal {
@@ -98,5 +107,5 @@ body {
 
 #display {
     position: relative;
-    top: 200px;
+    top: 180px;
 }
